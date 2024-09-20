@@ -1,5 +1,3 @@
-//idk what I'm doing but here we go
-
 const querystring = require('querystring');
 require('dotenv').config();
 const fs = require('fs');
@@ -50,7 +48,6 @@ async function setCache (key, value) {
 connectRedis().then(() => {
     confirmSong();
 });
-
 
 
 if (!AUTH_CODE) {
@@ -297,7 +294,6 @@ async function fetchPlaylists (offset = 0) {
 }
 
 
-
 let playlistItems = [];
 async function getPlaylistItems(playlists, offset = 0) {
 
@@ -375,12 +371,3 @@ console.log(`---+---+---+---`)
         }
     return songResults
 }
-
-
-
-
-
-/* Three main things left to accomplish:
-1. Access Redis Cache DONE
-2. Add Refresh Token functionality DONE
-3. Make this friendly and usable for other users*/
