@@ -193,10 +193,14 @@ async function searchSong() {
     let artist = prompt('Artist: ').toString();
     
     const params = new URLSearchParams({
-        q: `artist:${artist} track:${song}`,
+        q: `${artist} ${song}`,
         type: 'track',
-        limit: 5
-    });
+        limit: 5,
+        //filter no longer seems to be working, commenting out for now
+        //q: `artist:${artist} track:${song}`
+    })
+
+
     const url = `https://api.spotify.com/v1/search?${params.toString()}`
     console.log('Searching for song...')
     try {
